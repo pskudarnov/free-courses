@@ -1,15 +1,4 @@
 function additionTime(t1, t2) {
-    var error = '';
-
-    if (t1 < 1 || t1 > 100000) {
-        error += 'Значение t1 не соответсвует диапазону от 1 до 100000. ';
-    }
-    if (t2 < 1 || t2 > 100000) {
-        error += 'Значение t2 не соответсвует диапазону от 1 до 100000.';
-    }
-
-    if (error) return error;
-
     var t = t1 + t2;
     var hour = Math.floor(t / 3600); //часы
     var minutes = Math.floor((t - (hour * 3600)) / 60);   //минуты
