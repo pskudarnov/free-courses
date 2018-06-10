@@ -1,15 +1,16 @@
-function additionTime(t1, t2) {
-    var t = t1 + t2;
-    var hour = Math.floor(t / 3600); //часы
-    var minutes = Math.floor((t - (hour * 3600)) / 60);   //минуты
-    var seconds = t - ((hour * 3600) + (minutes * 60)); //секунды
+var t1 = process.argv[2];
+var t2 = process.argv[3];
 
-    var h = plural(hour, ['час', 'часа', 'часов']);
-    var m = plural(minutes, ['минута', 'минуты', 'минут']);
-    var s = plural(seconds, ['секунда', 'секунды', 'секунд']);
+var t = t1 + t2;
+var hour = Math.floor(t / 3600); //часы
+var minutes = Math.floor((t - (hour * 3600)) / 60);   //минуты
+var seconds = t - ((hour * 3600) + (minutes * 60)); //секунды
 
-    return h + m + s;
-}
+var h = plural(hour, ['час', 'часа', 'часов']);
+var m = plural(minutes, ['минута', 'минуты', 'минут']);
+var s = plural(seconds, ['секунда', 'секунды', 'секунд']);
+
+console.log(h + m + s);
 
 function plural(number, title) {
     if (number === 0) return '';
@@ -25,5 +26,3 @@ function plural(number, title) {
 
     return number + ' ' + title[i] + ' ';
 }
-
-console.log(additionTime(process.argv[2], process.argv[3]));
